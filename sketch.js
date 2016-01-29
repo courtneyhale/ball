@@ -14,7 +14,7 @@ var ball = {
   },
 
   move: function () {
-    this.y += 1; // this line is the same as: this.x = this.x + 1;
+    this.y += 1; // this line is the same as: this.y = this.y + 1;
   },
 
   checkForBounce: function () {
