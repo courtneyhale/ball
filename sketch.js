@@ -14,12 +14,12 @@ var ball = {
   },
 
   move: function () {
-    this.x += 1; // this line is the same as: this.x = this.x + 1;
+    this.y += 1; // this line is the same as: this.x = this.x + 1;
   },
 
   checkForBounce: function () {
-    if (this.x > width - this.size / 2) this.bounce();
-    if (this.x < 0 + this.size / 2) this.bounce();
+    if (this.y > height - this.size / 2) this.bounce();
+    if (this.y < 0 + this.size / 2) this.bounce();
   },
 
   bounce: function () {
