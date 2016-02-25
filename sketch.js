@@ -2,6 +2,10 @@ var ball = {
   x: 20,
   y: 200,
   size: 15,
+  speed: {
+    x: 8,
+    y: 8
+  },
 
   display: function () {
     // note that to access any of ball's properties, you must use dot notation, using the special keyword this
@@ -14,15 +18,16 @@ var ball = {
   },
 
   move: function () {
-    this.x += 7; // this line is the same as: this.x = this.x + 1;
-    this.y +=7;
+    this.x += this.speed.x; // this line is the same as: this.x = this.x + 1;
+    this.y +=this.speed.y;
   },
 
   checkForBounce: function () {
-    if (this.x > width - this.size / 2) this.bounce();
-    if (this.x < 0 + this.size / 2) this.bounce();
-    if (this.y > height - this.size / 2) this.bounce();
-    if (this.y < 0 + this.size / 2) this.bounce();
+    if (this.x > width - this.size / 2) this.bounceX();
+    if (this.x < this.size / 2) this.bounceX();
+    if (this.y > height - this.size / 2) this.bounceY();
+    if (this.y < this.size / 2) this.bounceY();
+
   },
 
   bounce: function () {
@@ -32,13 +37,11 @@ var ball = {
   },
 
   bounceX: function() {
-    if (this.x > width - this.size / 2) this.bounce();
-    if (this.x < 0 + this.size / 2) this.bounce();
+    this.speed.x *= -1
   },
 
   bounceY: function() {
-    if (this.y > height - this.size / 2) this.bounce();
-    if (this.y < 0 + this.size / 2) this.bounce();
+    this.speed.y *=-1
   }
 };
 
