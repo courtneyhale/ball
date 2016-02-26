@@ -19,11 +19,14 @@ var ball = {
 
   checkForBounce: function () {
     if (this.y > height - this.size / 2) this.bounce();
-    if (this.y < 0 + this.size / 2) this.bounce();
+    if (this.y < this.size / 2) this.bounce();
   },
 
   bounce: function () {
-    // your code goes here; a hint: this will require making your own variable as well as defining this function
+
+    bounceY: function (){
+      this.speed.y *= -1
+    }// your code goes here; a hint: this will require making your own variable as well as defining this function
     // another hint: notice that ball is defined using object literal notation
   }
 };
