@@ -27,7 +27,7 @@ var ball = {
 
       this.speed *= -1
     }// your code goes here; a hint: this will require making your own variable as well as defining this function
-    // another hint: notice that ball is defined using object literal notation
+
 
 };
 
